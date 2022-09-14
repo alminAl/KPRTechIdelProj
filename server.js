@@ -1,6 +1,7 @@
 const express = require("express");
 const videosRoutes = require("./routes/videos");
 const mongoose = require("mongoose");
+const userRoutes = require("./routes/userRoutes");
 
 // express app
 const app = express();
@@ -14,11 +15,12 @@ app.use(express.json());
 
 // route
 app.use("/api/videos", videosRoutes);
+app.use("/api/user", userRoutes)
 
 // connect to DB
 mongoose
   .connect(
-    "mongodb+srv://test:test1234@mearnapp.wjx6wek.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://admin:admin1234@cluster0.vtrhzi9.mongodb.net/?retryWrites=true&w=majority"
   )
   .then(() => {
     // listen for request

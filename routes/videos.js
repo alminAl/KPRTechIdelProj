@@ -1,5 +1,6 @@
 const express = require('express')
 const { createVideo, getAllVideos, getSingleVideo } = require('../controllers/videoControllers')
+const requireAuth = require('../middleware/requireAuth')
 const VideoModel = require('../models/VideoModel')
 
 
@@ -8,6 +9,10 @@ const VideoModel = require('../models/VideoModel')
 
 // express app
 const  router = express()
+
+// require auth for all video routes
+router.use(requireAuth)
+
 
 
 // routes
