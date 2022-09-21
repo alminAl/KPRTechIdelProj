@@ -20,7 +20,12 @@ const videosSchema = new Schema(
       type: Number,
       require: true,
     },
+    user_id: {
+      type: String,
+      required: true
+    },
   },
+  
   { timestamps: true }
 );
 

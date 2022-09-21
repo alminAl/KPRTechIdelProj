@@ -1,5 +1,5 @@
 const express = require('express')
-const { createVideo, getAllVideos, getSingleVideo } = require('../controllers/videoControllers')
+const { createVideo, getAllVideos, getSingleVideo, userPostedAllVideo } = require('../controllers/videoControllers')
 const requireAuth = require('../middleware/requireAuth')
 const VideoModel = require('../models/VideoModel')
 
@@ -22,7 +22,9 @@ router.use(requireAuth)
 //     res.json({mess: "hello all world!"})
 // })
 
-router.get('/', getAllVideos)
+// router.get('/', getAllVideos)
+router.get('/', userPostedAllVideo)
+
 
 // get single
 // router.get('/:id', (req, res) => {
